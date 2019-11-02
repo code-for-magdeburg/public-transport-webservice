@@ -1,0 +1,15 @@
+{
+    "name": "Public Transport Webservice",
+    "image": "heroku/gradle",
+    "env": {
+        "PROVIDER_NAME": {
+          "description": "Name of the NetworkProvider",
+          "value": "Nasa"
+        },
+        "PROVIDER_AUTHORIZATION": {
+          "description": "Provider authorization token",
+          "generator": "secret"
+        }
+      }
+  }
+  

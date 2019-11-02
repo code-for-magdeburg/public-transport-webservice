@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'public-transport-webservice'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+    compile files('lib/public-transport-enabler.jar')
+    compile 'io.github.cdimascio:java-dotenv:5.1.3'
+
+    compile 'com.squareup.okhttp3:okhttp:3.12.6'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.12.6'
+    compile 'com.google.guava:guava:28.1-android'
+    compile 'org.slf4j:slf4j-api:1.7.28'
+    compile 'com.google.code.findbugs:jsr305:3.0.2'
+    compile 'org.json:json:20090211' // provided by Android
+    compile 'net.sf.kxml:kxml2:2.3.0' // provided by Android
+}
