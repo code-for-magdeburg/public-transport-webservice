@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.EnumSet;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,6 +20,7 @@ import de.schildbach.pte.dto.SuggestLocationsResult;
 import io.github.cdimascio.dotenv.Dotenv;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class LocationsController {
 
     private String providerName;
