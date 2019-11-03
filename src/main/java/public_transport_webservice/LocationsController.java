@@ -55,9 +55,10 @@ public class LocationsController {
     @RequestMapping(value = "/query-departures", method = RequestMethod.GET)
     public QueryDeparturesResult departures(
             @RequestParam(value = "stationId") final String stationId,
-            @RequestParam(value = "maxDepartures", defaultValue = "20") final int maxDepartures)
+            @RequestParam(value = "maxDepartures", defaultValue = "20") final int maxDepartures,
+            @RequestParam(value = "equivs", defaultValue = "0") final Boolean equivs)
             throws IOException {
-        return provider.queryDepartures(stationId, new Date(), maxDepartures, false);
+        return provider.queryDepartures(stationId, new Date(), maxDepartures, equivs);
     }
 
     @RequestMapping(value = "/suggest-locations", method = RequestMethod.GET)
