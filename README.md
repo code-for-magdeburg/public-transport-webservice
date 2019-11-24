@@ -30,5 +30,9 @@ GET /query-departures
 
 GET /suggest-locations
 
+# Credits
+
+[Andreas Schildbach](https://github.com/schildbach): For providing the awesome library [Public Transport Enabler](https://github.com/schildbach/public-transport-enabler)
+
 # License
 [MIT](LICENSE)
